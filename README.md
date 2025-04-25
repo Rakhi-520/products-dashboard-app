@@ -40,8 +40,10 @@ To get started with the project locally, follow these steps:
    ```  
 
 4. Build production
-   
+   ```bash  
    npm run build
+
+   ``` 
 
 5. Start the development server:  
    ```bash  
