@@ -39,11 +39,16 @@ To get started with the project locally, follow these steps:
 3. Install dependencies:  
    ```bash  
    npm install  
+
    ```  
 
-4. Start the development server:  
+4. Build production
+   
+   npm run build
+
+5. Start the development server:  
    ```bash  
-   npm run dev  
+   npm start 
    ```  
 
    Open [http://localhost:3000](http://localhost:3000) in your browser to explore the app.  
