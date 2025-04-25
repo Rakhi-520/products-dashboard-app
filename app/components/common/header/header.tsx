@@ -46,7 +46,7 @@ export default function Header({
         >
           <MenuSlot open={open} setOpen={setOpen} />
           <Brand />
-          <SearchBarSlot /> {}
+          <SearchBarSlot /> 
         </Stack>
 
         {/* Right side: Theme, Notifications, Messages, Profile */}
