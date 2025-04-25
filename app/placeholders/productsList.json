@@ -1,0 +1,265 @@
+[
+  {
+    "id": 3333,
+    "title": "Professional 4K Monitor",
+    "summary": "Perfect for office work with sharp visuals.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 13,
+    "price": 199.99,
+    "image": "/assets/monitor3.jpg",
+    "brand": "VisionPlus",
+    "score": 4.5
+  },
+  {
+    "id": 3334,
+    "title": "Wireless Gaming Headset",
+    "summary": "Take your gaming experience to the next level with this wireless headset.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 22,
+    "price": 149.99,
+    "image": "/assets/headphones4.png",
+    "brand": "ProTone",
+    "score": 4
+  },
+  {
+    "id": 3335,
+    "title": "Fitness Smartwatch",
+    "summary": "Track your health and fitness goals with ease.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 4,
+    "price": 99.99,
+    "image": "/assets/smartwatch.jpg",
+    "brand": "FitTech",
+    "score": 3.5
+  },
+  {
+    "id": 3336,
+    "title": "Luxury Smartwatch",
+    "summary": "Stay connected in style with this high-end smartwatch.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 12,
+    "price": 299.99,
+    "image": "/assets/smartwatch2.jpeg",
+    "brand": "FitTech",
+    "score": 5.0
+  },
+  {
+    "id": 3337,
+    "title": "Ergonomic Office Chair",
+    "summary": "Stay comfortable and supported during long work hours.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 47,
+    "price": 159.99,
+    "image": "/assets/office-chair.png",
+    "brand": "WorkEase",
+    "score": 4.0
+  },
+  {
+    "id": 3338,
+    "title": "Studio Monitor Headphones",
+    "summary": "Designed for audiophiles and professionals seeking clear, balanced audio.",
+    "quantity": 0,
+    "price": 179.99,
+    "image": "/assets/headphones3.jpg",
+    "brand": "ProTone",
+    "score": 5.0
+  },
+  {
+    "id": 3339,
+    "title": "Advanced Fitness Tracker",
+    "summary": "Monitor your workouts with advanced tracking features.",
+    "quantity": 35,
+    "price": 129.99,
+    "image": "/assets/smartwatch1.jpg",
+    "brand": "FitTech",
+    "score": 4.5
+  },
+  {
+    "id": 3340,
+    "title": "Compact Travel Headphones",
+    "summary": "Lightweight, foldable headphones perfect for travel.",
+    "quantity": 60,
+    "price": 89.99,
+    "image": "/assets/headphones1.jpeg",
+    "brand": "ProTone",
+    "score": 3.5
+  },
+  {
+    "id": 3341,
+    "title": "Mechanical Gaming Keyboard",
+    "summary": "Enhance your gameplay with tactile, responsive keys and RGB lighting.",
+    "quantity": 21,
+    "price": 99.99,
+    "image": "/assets/keyboard.jpeg",
+    "brand": "GameKey",
+    "score": 2.5
+  },
+  {
+    "id": 3342,
+    "title": "4K Ultra HD Monitor",
+    "summary": "Experience vivid clarity and unmatched detail with this 4K monitor.",
+    "quantity": 25,
+    "price": 299.99,
+    "image": "/assets/monitor.png",
+    "brand": "VisionPlus",
+    "score": 4.5
+  },
+  {
+    "id": 3343,
+    "title": "Executive Office Chair",
+    "summary": "Sophisticated design and ultimate comfort for executives.",
+    "quantity": 20,
+    "price": 249.99,
+    "image": "/assets/office-chair1.png",
+    "brand": "WorkEase",
+    "score": 4.5
+  },
+  {
+    "id": 3344,
+    "title": "Portable HD Monitor",
+    "summary": "Perfect for remote work and presentations on the go.",
+    "quantity": 0,
+    "price": 199.99,
+    "image": "/assets/monitor2.jpg",
+    "brand": "VisionPlus",
+    "score": 3.0
+  },
+  {
+    "id": 3345,
+    "title": "Adjustable Gaming Chair",
+    "summary": "Play for hours with maximum comfort and style.",
+    "quantity": 15,
+    "price": 199.99,
+    "image": "/assets/office-chair2.png",
+    "brand": "WorkEase",
+    "score": 5.0
+  },
+  {
+    "id": 3346,
+    "title": "Posture Support Chair",
+    "summary": "Improve your posture with this ergonomic design.",
+    "quantity": 41,
+    "price": 129.99,
+    "image": "/assets/office-chair3.png",
+    "brand": "WorkEase",
+    "score": 4.0
+  },
+  {
+    "id": 3347,
+    "title": "Compact Wireless Keyboard",
+    "summary": "Sleek and portable keyboard for maximum productivity on the go.",
+    "quantity": 1,
+    "price": 89.99,
+    "image": "/assets/keyboard1.jpeg",
+    "brand": "FlexType",
+    "score": 3.5
+  },
+  {
+    "id": 3348,
+    "title": "Compact Smartwatch",
+    "summary": "Lightweight and versatile, perfect for everyday use.",
+    "quantity": 65,
+    "price": 79.99,
+    "image": "/assets/smartwatch3.jpg",
+    "brand": "FitTech",
+    "score": 3.0
+  },
+  {
+    "id": 3349,
+    "title": "Heart Rate Monitor Watch",
+    "summary": "Keep your heart health in check with this reliable watch.",
+    "quantity": 25,
+    "price": 89.99,
+    "image": "/assets/smartwatch4.jpg",
+    "brand": "FitTech",
+    "score": 4.0
+  },
+  {
+    "id": 3350,
+    "title": "Digital Display Smartwatch",
+    "summary": "Features a crisp digital display for better readability.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 0,
+    "price": 149.99,
+    "image": "/assets/smartwatch5.png",
+    "brand": "FitTech",
+    "score": 4.5
+  },
+  {
+    "id": 3351,
+    "title": "Rugged Outdoor Smartwatch",
+    "summary": "Built to withstand tough environments with advanced GPS.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 6,
+    "price": 249.99,
+    "image": "/assets/smartwatch3.jpg",
+    "brand": "FitTech",
+    "score": 4.0
+  },
+  {
+    "id": 3352,
+    "title": "Curved Gaming Monitor",
+    "summary": "Immerse yourself in your favorite games with this curved display.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 4,
+    "price": 349.99,
+    "image": "/assets/monitor1.jpg",
+    "brand": "VisionPlus",
+    "score": 5.0
+  },
+  {
+    "id": 3353,
+    "title": "High-Refresh Gaming Monitor",
+    "summary": "Smooth visuals for competitive gaming.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 0,
+    "price": 399.99,
+    "image": "/assets/monitor4.jpg",
+    "brand": "VisionPlus",
+    "score": 4.5
+  },
+  {
+    "id": 3354,
+    "title": "Ergo Office Chair",
+    "summary": "Blend of comfort and support for any workspace.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 40,
+    "price": 139.99,
+    "image": "/assets/office-chair4.jpg",
+    "brand": "WorkEase",
+    "score": 3.5
+  },
+  {
+    "id": 3355,
+    "title": "Noise-Cancelling Headphones",
+    "summary": "Block out distractions and enjoy uninterrupted listening.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 29,
+    "price": 199.99,
+    "image": "/assets/headphones2.jpg",
+    "brand": "ProTone",
+    "score": 3.0
+  },
+  {
+    "id": 3356,
+    "title": "Adjustable Desk Monitor",
+    "summary": "Designed for ergonomic setups with adjustable height.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 9,
+    "price": 159.99,
+    "image": "/assets/monitor5.jpg",
+    "brand": "ErgoVision",
+    "score": 4.5
+  },
+  {
+    "id": 3357,
+    "title": "Premium Over-Ear Headphones",
+    "summary": "Immerse yourself in music with superior sound quality and comfort.",
+    "description": "This is a great product for everyday use.",
+    "quantity": 34,
+    "price": 129.99,
+    "image": "/assets/headphones.jpg",
+    "brand": "SoundElite",
+    "score": 4.5
+  }
+]

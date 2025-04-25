@@ -1,0 +1,22 @@
+[
+    {
+        "type": "sales",
+        "value": "359,078",
+        "percent": 3.78
+    },
+    {
+        "type": "profit",
+        "value": "14,225",
+        "percent": 12.6
+    },
+    {
+        "type": "orders",
+        "value": "168,674",
+        "percent": -0.47
+    },
+    {
+        "type": "customers",
+        "value": "26,898",
+        "percent": 0.14
+    }
+]

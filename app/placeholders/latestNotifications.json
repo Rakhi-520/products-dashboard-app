@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "type": "order",
+        "message": "New order placed: #ORD12345",
+        "time": "2 minutes ago",
+        "read": false
+    },
+    {
+        "id": 2,
+        "type": "payment",
+        "message": "Payment of $120 received from John Doe",
+        "time": "15 minutes ago",
+        "read": true
+    },
+    {
+        "id": 3,
+        "type": "shipping",
+        "message": "Order #ORD12344 has been shipped",
+        "time": "1 hour ago",
+        "read": false
+    },
+    {
+        "id": 4,
+        "type": "order",
+        "message": "Order #ORD12343 has been placed",
+        "time": "2 hours ago",
+        "read": false
+    },
+    {
+        "id": 5,
+        "type": "promotion",
+        "message": "20% off on selected items for a limited time",
+        "time": "3 hours ago",
+        "read": true
+    }
+]

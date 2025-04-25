@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "sender": "Jane Smith",
+        "message": "Can you update the shipping address for my order?",
+        "time": "10 minutes ago",
+        "read": false
+    },
+    {
+        "id": 2,
+        "sender": "Michael Lee",
+        "message": "I’m interested in bulk purchasing, can we discuss?",
+        "time": "30 minutes ago",
+        "read": false
+    },
+    {
+        "id": 3,
+        "sender": "Alex Johnson",
+        "message": "Can you provide an invoice for my order?",
+        "time": "1 hour ago",
+        "read": true
+    },
+    {
+        "id": 4,
+        "sender": "Sophia Brown",
+        "message": "Thank you for the prompt delivery!",
+        "time": "2 hours ago",
+        "read": true
+    },
+    {
+        "id": 5,
+        "sender": "Chris Evans",
+        "message": "I need help with my account login.",
+        "time": "3 hours ago",
+        "read": true
+    }
+]

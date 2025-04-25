@@ -1,0 +1,62 @@
+[
+  {
+    "profit": 13,
+    "loss": 11,
+    "month": "Jan"
+  },
+  {
+    "profit": 12,
+    "loss": 26,
+    "month": "Feb"
+  },
+  {
+    "profit": 55,
+    "loss": 59,
+    "month": "Mar"
+  },
+  {
+    "profit": 32,
+    "loss": 33,
+    "month": "Apr"
+  },
+  {
+    "profit": 57,
+    "loss": 69,
+    "month": "May"
+  },
+  {
+    "profit": 60,
+    "loss": 63,
+    "month": "June"
+  },
+  {
+    "profit": 59,
+    "loss": 60,
+    "month": "July"
+  },
+  {
+    "profit": 26,
+    "loss": 34,
+    "month": "Aug"
+  },
+  {
+    "profit": 51,
+    "loss": 51,
+    "month": "Sept"
+  },
+  {
+    "profit": 60,
+    "loss": 65,
+    "month": "Oct"
+  },
+  {
+    "profit": 44,
+    "loss": 38,
+    "month": "Nov"
+  },
+  {
+    "profit": 0,
+    "loss": 0,
+    "month": "Dec"
+  }
+]
