@@ -4,18 +4,15 @@ import {
   Box,
   Card,
   IconButton,
-  InputAdornment,
   MenuItem,
   TextField,
   ToggleButton,
   ToggleButtonGroup,
 } from "@mui/material";
 import {
-  Cancel01Icon,
   FilterRemoveIcon,
   GridViewIcon,
   ListViewIcon,
-  Search01Icon,
 } from "hugeicons-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -25,7 +22,6 @@ export default function FilterProducts({
 }: {
   brandsList: string[];
 }) {
-  const [search, setSearch] = useState("");
   const [show, setShow] = useState("");
   const [sortby, setSortby] = useState("");
   const [category, setCategory] = useState("");
@@ -36,13 +32,11 @@ export default function FilterProducts({
   const router = useRouter();
 
   useEffect(() => {
-    const searchQuery = searchParams.get("search") || "";
     const showQuery = searchParams.get("show") || "";
     const sortbyQuery = searchParams.get("sortby") || "";
     const categoryQuery = searchParams.get("category") || "";
     const priceQuery = searchParams.get("price") || "";
     const brandQuery = searchParams.get("brand") || "";
-    setSearch(searchQuery);
     setShow(showQuery);
     setSortby(sortbyQuery);
     setCategory(categoryQuery);
@@ -51,29 +45,18 @@ export default function FilterProducts({
   }, [searchParams]);
 
   useEffect(() => {
-    // Update URL query parameters
     const query = new URLSearchParams(
       Object.fromEntries(
-        Object.entries({ search, show, sortby, category, price, brand }).filter(
-          ([, value]) => value // Only include non-empty values
+        Object.entries({ show, sortby, category, price, brand }).filter(
+          ([, value]) => value
         )
       )
     );
     router.push(`?${query.toString()}`, undefined);
-  }, [search, show, sortby, category, price, brand, router]);
+  }, [show, sortby, category, price, brand, router]);
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-  };
-  const handleClearSearch = () => {
-    setSearch("");
-  };
   const handleShow = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value === "all") {
-      setShow("");
-    } else {
-      setShow(e.target.value);
-    }
+    setShow(e.target.value === "all" ? "" : e.target.value);
   };
   const handleCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCategory(e.target.value);
@@ -101,18 +84,13 @@ export default function FilterProducts({
     }
   };
   const handleBrand = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value === "all") {
-      setBrand("");
-    } else {
-      setBrand(e.target.value);
-    }
+    setBrand(e.target.value === "all" ? "" : e.target.value);
   };
   const handleSortby = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSortby(e.target.value);
   };
 
   const handleResetFilters = () => {
-    setSearch("");
     setBrand("");
     setCategory("");
     setPrice("");
@@ -120,13 +98,8 @@ export default function FilterProducts({
     setSortby("");
   };
 
-  const IsResetFiltersEnable: boolean = !(
-    search ||
-    sortby ||
-    show ||
-    price ||
-    brand ||
-    category
+  const IsResetFiltersEnable = !(
+    sortby || show || price || brand || category
   );
 
   return (
@@ -139,34 +112,7 @@ export default function FilterProducts({
         flexWrap: "wrap",
       }}
     >
-      <TextField
-        size="small"
-        value={search}
-        onChange={handleSearch}
-        sx={{ flexGrow: 1 }}
-        label="Search"
-        variant="filled"
-        slotProps={{
-          input: {
-            startAdornment: (
-              <InputAdornment position="start">
-                <Search01Icon size={16} />
-              </InputAdornment>
-            ),
-            endAdornment: (
-              <InputAdornment
-                sx={{ visibility: search ? "visible" : "hidden" }}
-                position="end"
-              >
-                <IconButton onClick={handleClearSearch}>
-                  <Cancel01Icon size={16} />
-                </IconButton>
-              </InputAdornment>
-            ),
-          },
-        }}
-      />
-
+      {/* Sort */}
       <TextField
         select
         label="Sort by"
@@ -185,6 +131,7 @@ export default function FilterProducts({
         <MenuItem value={"desqty"}>Quantity: High to low</MenuItem>
       </TextField>
 
+      {/* Show (availability) */}
       <TextField
         select
         defaultValue={"all"}
@@ -200,6 +147,7 @@ export default function FilterProducts({
         <MenuItem value={"notavailable"}>Not Available</MenuItem>
       </TextField>
 
+      {/* Price */}
       <TextField
         select
         label="Price"
@@ -218,6 +166,7 @@ export default function FilterProducts({
         <MenuItem value={"min500"}>Above $500</MenuItem>
       </TextField>
 
+      {/* Brand */}
       <TextField
         select
         label="Brand"
@@ -238,6 +187,7 @@ export default function FilterProducts({
         ))}
       </TextField>
 
+      {/* Category (currently disabled) */}
       <TextField
         disabled
         select
@@ -251,8 +201,8 @@ export default function FilterProducts({
         <MenuItem value={0}>All</MenuItem>
       </TextField>
 
+      {/* Reset Button */}
       <Box display={"flex"} alignItems={"center"}>
-        {/* <Tooltip title="Reset filters"> */}
         <IconButton
           disabled={IsResetFiltersEnable}
           color="primary"
@@ -261,9 +211,9 @@ export default function FilterProducts({
         >
           <FilterRemoveIcon />
         </IconButton>
-        {/* </Tooltip> */}
       </Box>
 
+      {/* View Toggle (disabled for now) */}
       <ToggleButtonGroup disabled exclusive size="small" value="grid">
         <ToggleButton color="info" value="list" sx={{ px: 2 }}>
           <ListViewIcon size={18} />

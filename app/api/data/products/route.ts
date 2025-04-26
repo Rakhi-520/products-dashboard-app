@@ -3,88 +3,78 @@ import { promises as fs } from "fs";
 import { NextResponse } from "next/server";
 import path from "path";
 
-// Caching to avoid repeated file reads
+// Cache to avoid reading file repeatedly
 let cachedData: { data: Prd[]; timestamp: number } | null = null;
 
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
+
     const search = searchParams.get("search");
     const sortby = searchParams.get("sortby");
     const show = searchParams.get("show");
     const price = searchParams.get("price");
     const brand = searchParams.get("brand");
 
+    // Load product data from file if not cached
     if (!cachedData) {
-      const filePath = path.join(
-        process.cwd(),
-        "app/placeholders",
-        "productsList.json"
-      );
-
+      const filePath = path.join(process.cwd(), "app/placeholders", "productsList.json");
       const data = await fs.readFile(filePath, "utf-8");
       cachedData = { data: JSON.parse(data), timestamp: Date.now() };
     }
 
     let filteredData: Prd[] = cachedData?.data || [];
 
-    // ✅ Safe Search Filter (title OR description)
+    // ✅ Improved Search Filter: Matches title or description
     if (search) {
-      const searchLower = search.toLowerCase();
+      const query = search.toLowerCase();
       filteredData = filteredData.filter(
         (prd) =>
-          prd.title.toLowerCase().includes(searchLower) ||
-          (prd.description?.toLowerCase().includes(searchLower) ?? false)
+          prd.title.toLowerCase().includes(query) ||
+          prd.description?.toLowerCase().includes(query)
       );
     }
 
-    // Sort by filter
+    // 🔁 Sort Filter
     if (sortby) {
       switch (sortby) {
         case "popular":
-          filteredData = filteredData.sort((a, b) => b.score - a.score);
+          filteredData.sort((a, b) => b.score - a.score);
           break;
         case "ascqty":
-          filteredData = filteredData.sort((a, b) => a.quantity - b.quantity);
+          filteredData.sort((a, b) => a.quantity - b.quantity);
           break;
         case "desqty":
-          filteredData = filteredData.sort((a, b) => b.quantity - a.quantity);
+          filteredData.sort((a, b) => b.quantity - a.quantity);
           break;
         case "ascprice":
-          filteredData = filteredData.sort((a, b) => a.price - b.price);
+          filteredData.sort((a, b) => a.price - b.price);
           break;
         case "desprice":
-          filteredData = filteredData.sort((a, b) => b.price - a.price);
+          filteredData.sort((a, b) => b.price - a.price);
           break;
         default:
-          filteredData = filteredData.sort((a, b) => a.id - b.id);
-          break;
+          filteredData.sort((a, b) => a.id - b.id);
       }
     }
 
-    // Availability filter
+    // 🟢 Availability Filter
     if (show) {
-      filteredData = filteredData.filter((prd) => {
-        switch (show) {
-          case "available":
-            return prd.quantity > 0;
-          case "notavailable":
-            return prd.quantity === 0;
-          default:
-            return true;
-        }
-      });
+      filteredData = filteredData.filter((prd) =>
+        show === "available" ? prd.quantity > 0 : prd.quantity === 0
+      );
     }
 
-    // Price filter
+    // 💰 Price Filter
     if (price) {
-      filteredData = filteredData.filter((prd) => {
-        const { min, max } = JSON.parse(decodeURIComponent(price));
-        return (!min || prd.price > min) && (!max || prd.price < max);
-      });
+      const { min, max } = JSON.parse(decodeURIComponent(price));
+      filteredData = filteredData.filter(
+        (prd) =>
+          (!min || prd.price >= min) && (!max || prd.price <= max)
+      );
     }
 
-    // Brand filter
+    // 🏷️ Brand Filter
     if (brand) {
       filteredData = filteredData.filter(
         (prd) => prd.brand.toLowerCase() === brand.toLowerCase()
@@ -92,20 +82,11 @@ export async function GET(request: Request) {
     }
 
     return NextResponse.json(filteredData, { status: 200 });
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error("Error fetching or filtering data:", {
-        message: error.message,
-        stack: error.stack,
-        requestUrl: request.url,
-        queryParams: request.url.split("?")[1],
-      });
-    } else {
-      console.error("Unknown error:", error);
-    }
 
+  } catch (error) {
+    console.error("Error fetching or filtering data:", error);
     return NextResponse.json(
-      { error: `Error fetching or filtering data: ${(error as Error).message}` },
+      { error: "Internal Server Error" },
       { status: 500 }
     );
   }

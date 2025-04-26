@@ -93,7 +93,10 @@ export default function SearchBarSlot() {
   const handleSelect = (productTitle: string) => {
     setSearchTerm(productTitle);
     setShowDropdown(false);
-    router.push(`/products?search=${encodeURIComponent(productTitle)}`);
+
+    // ✅ Send only last keyword from title like "Headphones"
+    const keyword = productTitle.split(" ").pop() || productTitle;
+    router.push(`/products?search=${encodeURIComponent(keyword)}`);
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -119,7 +122,7 @@ export default function SearchBarSlot() {
         if (highlightedIndex >= 0 && highlightedIndex < suggestions.length) {
           handleSelect(suggestions[highlightedIndex].title);
         } else {
-          handleSearch();
+          handleSearch(); // ✅ When typed manually, allow full fuzzy match
         }
         break;
 
