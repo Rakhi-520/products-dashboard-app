@@ -8,8 +8,8 @@ export const options = {
       name: "next-auth.session-token",
       options: {
         httpOnly: true,
-        secure: true,
-        sameSite: "none",
+        secure: true,  // Change to false if running on localhost
+        sameSite: "none", // Use "lax" for localhost
       },
     },
   },
@@ -21,34 +21,38 @@ export const options = {
           label: "Username",
           type: "text",
           value: "admin",
-          placeholder: "enter your usename",
+          placeholder: "enter your username",
         },
         password: {
           label: "Password",
           type: "password",
-          value: "123456",
+          value: "welcome",
           placeholder: "enter your password",
         },
       },
       async authorize(credentials) {
+        console.log("Credentials received:", credentials);
+
         const user = {
           id: "1",
           username: "admin",
-          password: "123456",
-          name: "Ethan Ekhtiyar",
-          email: "ethan.ekhtiyar@gmail.com",
+          password: "welcome",
+          name: "Admin User",
         };
 
         if (
           credentials?.username === user.username &&
           credentials?.password === user.password
         ) {
+          console.log("✅ Login successful!");
           return user;
         } else {
+          console.log("❌ Login failed: invalid credentials");
           return null;
         }
-      },
-    }),
+      }
+    }), 
+    
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID as string,
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
